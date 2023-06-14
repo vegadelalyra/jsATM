@@ -1,13 +1,13 @@
 {
   "name": "sprint-1",
   "version": "0.0.1",
-  "description": "",
+  "description": "ATH done on JavaScript",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["sprint", "ath", "profiles", "users", "fetch", "register"],
   "author": "Vega de la Lyra <lyradeperseo@gmail.com> (https://www.linkedin.com/in/vegadelalyra/)",
   "license": "MIT"
 }
