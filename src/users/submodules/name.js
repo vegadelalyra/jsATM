@@ -1,5 +1,6 @@
 // sub module to fetch users spanish names 
 import { genRamNum } from "./randomize.js"
+import axios from "axios"
 
 export async function fetchName() {
     // MAIN LOGIC [BEGINNING]
@@ -21,6 +22,7 @@ export async function fetchName() {
 
     // Fetch names from the given URL
     async function getName(URL) {
+        console.log(URL)
         const req = await fetch(URL)
         const list = await req.json()
         .then(list => list.data)
