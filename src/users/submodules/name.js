@@ -1,12 +1,11 @@
 // sub module to fetch users spanish names 
 import { genRamNum } from "./randomize.js"
-// import axios from "axios"
 
 export async function fetchName() {
     // MAIN LOGIC [BEGINNING]
 
     // Dynamyze website URL were spanish names lists resides 
-    const baseURL = 'https://randomlists.com/data/'
+    const baseURL = 'http://randomlists.com/data/'
     const reqURL = name => baseURL + `names-${name}-spanish.json` 
     
     // Concurrently get a random name 
@@ -22,8 +21,9 @@ export async function fetchName() {
 
     // Fetch names from the given URL
     async function getName(URL) {
-        const req = await axios.get(URL)
-        const list = req.data.data
+        const req = await fetch(URL)
+        const list = await req.json()
+        .then(list => list.data)
 
         // pick a random first or last name
         const thisList = list.length - 1        
