@@ -5,7 +5,7 @@ export async function fetchName() {
     // MAIN LOGIC [BEGINNING]
 
     // Dynamyze website URL were spanish names lists resides 
-    const baseURL = 'http://randomlists.com/data/'
+    const baseURL = 'https://randomlists.com/data/'
     const reqURL = name => baseURL + `names-${name}-spanish.json` 
     
     // Concurrently get a random name 
@@ -35,4 +35,4 @@ export async function fetchName() {
 }
 
 // test
-console.log(await fetchName())
+// console.log(await fetchName())
