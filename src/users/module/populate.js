@@ -11,8 +11,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 usersList = await Promise.all(usersList)
-console.table()
-
+export { usersList }
 
 // test
 // console.log(usersList)

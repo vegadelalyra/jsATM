@@ -22,10 +22,10 @@ export async function fetchName() {
 
     // Fetch names from the given URL
     async function getName(URL) {
-        console.log(URL)
-        const req = await fetch(URL)
-        const list = await req.json()
-        .then(list => list.data)
+        const req = await axios.get(URL)
+        const list = req.data.data
+        // .then(list => list.data)
+        // const list = await req.json()
 
         // pick a random first or last name
         const thisList = list.length - 1        
@@ -37,4 +37,4 @@ export async function fetchName() {
 }
 
 // test
-console.log(await fetchName())
+// console.log(await fetchName())
