@@ -17,8 +17,7 @@
   ],
   "author": "Vega de la Lyra <lyradeperseo@gmail.com> (https://www.linkedin.com/in/vegadelalyra/)",
   "license": "MIT",
-  "devDependencies": {
-    "axios": "^1.4.0",
-    "cheerio": "^1.0.0-rc.12"
+  "dependencies": {
+    "axios": "^1.4.0"
   }
 }
