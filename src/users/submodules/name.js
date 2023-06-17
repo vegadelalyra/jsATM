@@ -35,4 +35,4 @@ export async function fetchName() {
 }
 
 // test
-console.log(await fetchName())
+// console.log(await fetchName())

@@ -1,8 +1,18 @@
 import { User } from "./User.js"
 
-console.log('HELLO FROM POPULATE Xd')
+let usersList = []
 
-const a = new User()
-await a.fetchName()
+for (let i = 0; i < 10; i++) {
+    usersList.push ( new Promise ( async r => {
+        let user = new User()
+        await user.fetchName()
+        r(user)
+    }))
+}
 
-// const a = [await genUser(), await genUser()]
+usersList = await Promise.all(usersList)
+console.table()
+
+
+// test
+// console.log(usersList)
