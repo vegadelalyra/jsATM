@@ -10,7 +10,10 @@ for (let i = 0; i < 10; i++) {
     }))
 }
 
+console.time('TIME')
 usersList = await Promise.all(usersList)
+console.timeEnd('TIME')
+
 export { usersList }
 
 // test
