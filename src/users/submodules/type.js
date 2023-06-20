@@ -1,4 +1,5 @@
 // submodule to classify admin or user
+import { parentPort } from 'worker_threads'
 import { genRamNum } from "./randomize.js"
 
 // 7 out of 10 users will be clients
@@ -9,6 +10,9 @@ export function setType() {
     if (prob > 7) return 'Administrator'
     return 'Client'
 }
+
+// worker
+parentPort?.postMessage(setType())
 
 // test
 // console.log(setType())

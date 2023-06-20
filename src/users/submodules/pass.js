@@ -1,5 +1,6 @@
 // submodule to generate 4 digits passwords
 import { genRamNum } from "./randomize.js"
+import { parentPort } from 'worker_threads'
 
 export async function genRanPass(digits = 4) {
     const pass = []
@@ -16,5 +17,9 @@ export async function genRanPass(digits = 4) {
     .then(arr => arr.join(''))
     // return joined array of values
 }
+
+// worker 
+parentPort?.postMessage(await genRanPass())
+
 // test
 // console.log(await genRanPass())

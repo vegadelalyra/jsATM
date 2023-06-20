@@ -1,20 +1,19 @@
-import { User } from "./User.js"
+import  "./User.js"
+import os from 'os'
+import cluster from "cluster"
+
+const numCPUs = os.cpus().length
+
+if (cluster.isPrimary) {
+    for (let i = 0; i < 1; i++) cluster.fork()
+} else {
+    console.log('Hello from', process.pid)
+    
+    // process.exit(0)
+}
 
 let usersList = []
 
-for (let i = 0; i < 10; i++) {
-    usersList.push ( new Promise ( async r => {
-        let user = new User()
-        await user.fetchName()
-        r(user)
-    }))
-}
-
-console.time('TIME')
-usersList = await Promise.all(usersList)
-console.timeEnd('TIME')
-
-export { usersList }
 
 // test
-// console.log(usersList)
+console.log(usersList)

@@ -1,5 +1,6 @@
 // sub module to generate random IDs
 import { genRamNum } from "./randomize.js"
+import { parentPort } from 'worker_threads'
 
 // min & max values to limit random nuums
 const min = 20  // min head
@@ -27,6 +28,9 @@ export function getRandomID() {
 
     return cc // return cc number 
 } 
+
+// worker
+parentPort?.postMessage(getRandomID())
 
 // test
 // console.log(getRandomID())
